@@ -1,9 +1,7 @@
-// backend/routes/listingRoutes.js
 const express = require('express');
 const router = express.Router();
-const Listing = require('../models/Listing'); // ✅ import your model
+const Listing = require('../models/Listing');
 
-// GET /api/listings - get all listings from DB
 router.get('/', async (req, res) => {
   try {
     const listings = await Listing.find().sort({ createdAt: -1 });
@@ -13,7 +11,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /api/listings - create a new listing
 router.post('/', async (req, res) => {
   try {
     const newListing = new Listing({
