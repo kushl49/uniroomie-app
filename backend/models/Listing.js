@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const listingSchema = new mongoose.Schema({
   user: {
-    type: Object, // You could later convert this to a reference
+    type: Object,
     required: true,
   },
   title: String,
