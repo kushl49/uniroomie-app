@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
-// GET /api/users - Get all seekers
 router.get('/', async (req, res) => {
   try {
     const seekers = await User.find({ isLookingForAccommodation: true });
@@ -12,7 +11,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /api/users - Create or update a user
 router.post('/', async (req, res) => {
   const newUser = req.body;
 
